@@ -1,0 +1,6 @@
+#rt is needed for clock_gettime on linux.  But it's already included with threading=multi
+#lib rt ;
+
+exe CreateProbingPT : store_binary.cpp ../util ;
+exe QueryProbingPT : query_binary.cpp ../util ;
+
