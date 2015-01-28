@@ -3,6 +3,8 @@
 requirements += <library>boost_seriazation ;
 external-lib boost_serialization ;
 
+#We should link to util not to kenlm
+
 exe CreateProbingPT : store_binary.cpp hash.cpp huffmanish.cpp line_splitter.cpp probing_hash_utils.cpp storing.cpp vocabid.cpp ..//kenlm boost_serialization ;
 exe QueryProbingPT : query_binary.cpp hash.cpp huffmanish.cpp line_splitter.cpp probing_hash_utils.cpp quering.cpp vocabid.cpp ..//kenlm boost_serialization ;
 
