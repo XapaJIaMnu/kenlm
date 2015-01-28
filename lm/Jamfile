@@ -22,7 +22,7 @@ if $(with-nplm) {
   wrappers += nplm ;
 }
 
-fakelib kenlm : $(wrappers) [ glob *.cc : *main.cc *test.cc ] ../util//kenutil : <include>.. $(max-order) : : <include>.. $(max-order) ;
+fakelib kenlm : $(wrappers) [ glob *.cc : *main.cc *test.cc ] ../pt//probingpt ../util//kenutil : <include>.. $(max-order) : : <include>.. $(max-order) ;
 
 import testing ;
 

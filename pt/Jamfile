@@ -5,6 +5,16 @@ external-lib boost_serialization ;
 
 #We should link to util not to kenlm
 
-exe CreateProbingPT : store_binary.cpp hash.cpp huffmanish.cpp line_splitter.cpp probing_hash_utils.cpp storing.cpp vocabid.cpp ..//kenlm boost_serialization ;
-exe QueryProbingPT : query_binary.cpp hash.cpp huffmanish.cpp line_splitter.cpp probing_hash_utils.cpp quering.cpp vocabid.cpp ..//kenlm boost_serialization ;
+#obj hash.o : hash.cpp ;
+#obj huffmanish.o : huffmanish.cpp ;
+#obj line_splitter.o : line_splitter.cpp ;
+#obj probing_hash_utils.o : probing_hash_utils.cpp ;
+#obj storing.o : storing.cpp ;
+#obj quering.o : quering.cpp ;
+#obj vocabid.o : vocabid.cpp ;
+
+fakelib probingpt : hash.cpp huffmanish.cpp line_splitter.cpp probing_hash_utils.cpp storing.cpp quering.cpp vocabid.cpp boost_serialization ;
+
+exe CreateProbingPT : store_binary.cpp ..//kenlm ;
+exe QueryProbingPT : query_binary.cpp ..//kenlm ;
 
